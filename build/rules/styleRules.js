@@ -1,10 +1,13 @@
 const { resolve } = require("../utils");
+const { cacheLoader, threadLoader } = require('../loaders')
 
 module.exports = [
   {
     test: /\.scss$/,
     use: [
       'style-loader',
+      cacheLoader,
+      // threadLoader(2), // bug 等待sass-loader fixed
       'css-modules-typescript-loader',
       {
         loader: 'css-loader',
@@ -31,6 +34,7 @@ module.exports = [
     test: /\.less$/,
     use: [
       'style-loader',
+      cacheLoader,
       'css-loader',
       {
         loader: "less-loader",

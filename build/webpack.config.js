@@ -15,8 +15,16 @@ module.exports = {
     path: resolve('dist'),
     filename: '[name].js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@views': resolve('src/containers/views'),
+      '@shared': resolve('src/containers/shared')
+    }
+  },
   plugins: [...plugins],
   module: {
     rules: [...jsRules, ...styleRules]
-  }
+  },
+  devtool: 'source-map'
 }
