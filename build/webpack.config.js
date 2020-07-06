@@ -22,6 +22,9 @@ module.exports = {
       '@shared': resolve('src/containers/shared')
     }
   },
+  devServer: {
+    historyApiFallback: true
+  },
   plugins: [...plugins],
   module: {
     rules: [...jsRules, ...styleRules]
