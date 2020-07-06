@@ -7,11 +7,14 @@ import ViewTest from '@views/ViewTest'
 import ShareTest from '@shared/SharedTest'
 
 import App from '@views/App/index'
+import Provider from './store/index'
 
 const render = () => {
   ReactDOM.render(
     <div className={styles.test}>
-      <App />
+      <Provider>
+        <App />
+      </Provider>
       {/* <ViewTest />
       <ShareTest />
       <Button type="primary">按钮</Button> */}
